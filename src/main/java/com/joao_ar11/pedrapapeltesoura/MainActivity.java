@@ -28,6 +28,29 @@ public class MainActivity extends ComponentActivity {
         verificarGanhador("Tesoura");
     }
 
+    public String gerarEscolhaAleatoria() {
+        String[] escolhas = { "Pedra", "Papel", "Tesoura" };
+        int indiceAleatorio = new Random().nextInt(3);
+        String escolhaApp = escolhas[indiceAleatorio];
+
+        ImageView imagemApp = findViewById(R.id.image_app);
+
+        switch (escolhaApp) {
+            case "Pedra":
+                imagemApp.setImageResource(R.drawable.pedra);
+                break;
+            case "Papel":
+                imagemApp.setImageResource(R.drawable.papel);
+                break;
+            case "Tesoura":
+                imagemApp.setImageResource(R.drawable.tesoura);
+                break;
+        }
+
+        return escolhaApp;
+    }
+
     public void verificarGanhador(String escolhaUsuario) {
+        String escolhaApp = gerarEscolhaAleatoria();
     }
 }
