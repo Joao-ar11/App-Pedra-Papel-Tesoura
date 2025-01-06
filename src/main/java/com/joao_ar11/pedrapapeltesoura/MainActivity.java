@@ -9,6 +9,6 @@ public class MainActivity extends ComponentActivity {
     @Override
     protected void onCreate(Bundle savedInstances) {
         super.onCreate(savedInstances);
-        setContentView();
+        setContentView(R.layout.activity_main);
     }
 }

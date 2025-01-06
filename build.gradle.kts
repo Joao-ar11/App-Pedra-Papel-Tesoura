@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.joao_ar11.pedrapapeltesoura"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.joao_ar11.pedrapapeltesoura"
