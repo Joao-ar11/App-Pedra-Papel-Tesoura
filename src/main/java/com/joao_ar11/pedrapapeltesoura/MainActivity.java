@@ -3,6 +3,7 @@ package com.joao_ar11.pedrapapeltesoura;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.activity.ComponentActivity;
 
@@ -52,5 +53,22 @@ public class MainActivity extends ComponentActivity {
 
     public void verificarGanhador(String escolhaUsuario) {
         String escolhaApp = gerarEscolhaAleatoria();
+        TextView textoResultado = findViewById(R.id.text_resultado);
+
+        if (
+            (escolhaApp == "Pedra" && escolhaUsuario == "Tesoura") ||
+            (escolhaApp == "Papel" && escolhaUsuario == "Pedra") ||
+            (escolhaApp == "Tesoura" && escolhaUsuario == "Papel")
+        ) {
+            textoResultado.setText("Você perdeu :(");
+        } else if (
+            (escolhaUsuario == "Pedra" && escolhaApp == "Tesoura") ||
+            (escolhaUsuario== "Papel" && escolhaApp == "Pedra") ||
+            (escolhaUsuario == "Tesoura" && escolhaApp == "Papel")
+        ) {
+            textoResultado.setText("Você ganhou :D");
+        } else {
+            textoResultado.setText("Empatamos ;)");
+        }
     }
 }
